@@ -1,7 +1,27 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1 class="text-center">LIST OF COUNTRIES</h1>
+            <h1 class="page-title text-center">COVID-19 COUNTRY WISE CASES</h1>
+        </div>
+    </div>
+    <hr>
+    <!-- <div class="row">
+        <div class="col-md-6 text-center">
+            <label for="c">Select Country</label>
+        </div>
+        <div class="col-md-6">
+            <select name="" *ngFor="let con of countries" class="form-control" id="c">
+                    <option value="con">{{con}}</option>
+                </select>
+        </div>
+    </div> -->
+
+    <div class="mx-auto">
+        <div class="form-group col-lg-5 mx-auto">
+            <label for="c">Select Country</label>
+            <select name="" *ngFor='let con of countries' id="c" class="form-control">
+                <option value="con">{{con}}</option>
+            </select>
         </div>
     </div>
 </div>

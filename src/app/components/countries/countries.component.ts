@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataServieService } from 'src/app/services/data-servie.service';
+import { GlobalDataSummary } from 'src/app/models/global-covid-data';
 
 @Component({
   selector: 'app-countries',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CountriesComponent implements OnInit {
 
-  constructor() { }
+  data : GlobalDataSummary[];
+  countries :string[]= [];
+
+  constructor(private service : DataServieService) { }
 
   ngOnInit(): void {
+
+    this.service.getGlobalCoronaData().subscribe(result=>{
+      this.data = result;
+      this.data.forEach(cs=>{
+        this.countries.push(cs.country);
+        console.log(this.countries);
+        
+      })
+    })
   }
 
 }
