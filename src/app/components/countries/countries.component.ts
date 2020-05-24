@@ -9,6 +9,11 @@ import { GlobalDataSummary } from 'src/app/models/global-covid-data';
 })
 export class CountriesComponent implements OnInit {
 
+  totalConfirmed = 0 ;
+  totalActive = 0;
+  totalRecoverd = 0;
+  totalDeath = 0 ;
+
   data : GlobalDataSummary[];
   countries :string[]= [];
 
@@ -24,6 +29,26 @@ export class CountriesComponent implements OnInit {
         
       })
     })
-  }
+
+     }
+     updateVaule(country : String){
+      console.log(country);
+      
+      this.data.forEach(cs=>{
+        if (cs.country == country) {
+          
+          
+          this.totalConfirmed = cs.confirmed
+
+          this.totalActive = cs.active
+          this.totalRecoverd = cs.recovered
+          this.totalDeath = cs.death
+          
+        }
+        
+      })
+
+    }
+
 
 }

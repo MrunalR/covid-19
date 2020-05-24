@@ -5,23 +5,16 @@
         </div>
     </div>
     <hr>
-    <!-- <div class="row">
-        <div class="col-md-6 text-center">
-            <label for="c">Select Country</label>
-        </div>
-        <div class="col-md-6">
-            <select name="" *ngFor="let con of countries" class="form-control" id="c">
-                    <option value="con">{{con}}</option>
-                </select>
-        </div>
-    </div> -->
-
     <div class="mx-auto">
         <div class="form-group col-lg-5 mx-auto">
             <label for="c">Select Country</label>
-            <select name="" *ngFor='let con of countries' id="c" class="form-control">
-                <option value="con">{{con}}</option>
+            <select name="" id="c" class="form-control" #input (change)='updateVaule(input.value)'>
+                <option *ngFor='let con of countries' value="{{con}}">{{con}}</option>
             </select>
         </div>
     </div>
+
+    <app-number-card [totalConfirmed]='totalConfirmed' [totalActive]='totalActive' [totalRecoverd]='totalRecoverd' [totalDeath]='totalDeath'>
+
+    </app-number-card>
 </div>

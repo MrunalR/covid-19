@@ -7,13 +7,15 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { CountriesComponent } from './components/countries/countries.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NumberCardComponent } from './components/number-card/number-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    CountriesComponent
+    CountriesComponent,
+    NumberCardComponent
   ],
   imports: [
     BrowserModule,
