@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { Ng2GoogleChartsModule } from 'ng2-google-charts';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,12 +17,14 @@ import { NumberCardComponent } from './components/number-card/number-card.compon
     HeaderComponent,
     HomeComponent,
     CountriesComponent,
-    NumberCardComponent
+    NumberCardComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    Ng2GoogleChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
