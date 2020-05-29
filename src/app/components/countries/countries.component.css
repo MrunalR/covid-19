@@ -1,0 +1,41 @@
+.about_corona {
+    text-transform: uppercase;
+    font-size: 1.4em;
+    font-weight: 700;
+    margin-bottom: 16px;
+    font-weight: bolder;
+    text-align: left;
+    padding: 15px 0 15px 0;
+}
+
+@media only screen and (max-width: 600px) {
+    .about_corona {
+        text-transform: uppercase;
+        font-size: 1.4em;
+        font-weight: 700;
+        margin-bottom: 10px;
+        font-weight: bolder;
+        text-align: left;
+        padding: 15px 0 5px 0;
+        margin-left: 20px;
+    }
+    .symptoms {
+        height: 250px;
+        width: auto;
+        text-align: center;
+        margin-left: 20px;
+    }
+    .spread {
+        height: auto;
+        width: 325px;
+        text-align: center;
+        margin-left: 20px;
+    }
+    .prevention {
+        height: auto;
+        width: 325px;
+        text-align: center;
+        margin-left: 20px;
+        margin-bottom: 15px;
+    }
+}

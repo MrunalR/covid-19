@@ -16,9 +16,7 @@ export class HomeComponent implements OnInit {
   totalRecoverd = 0;
   totalDeath = 0;
 
-
-
-  globalCovidData: GlobalDataSummary[];
+globalCovidData: GlobalDataSummary[];
   pieChart: GoogleChartInterface = {
     chartType: 'PieChart'
   }
@@ -28,60 +26,7 @@ export class HomeComponent implements OnInit {
 
   constructor(private dataService: DataServieService) { }
 
-  initChart(casetype: string) {
-    let datatable = [];
-
-    datatable.push(["Country", "Cases"])
-    this.globalCovidData.forEach(cs => {
-      let value: number;
-
-      if (casetype == 'c'){
-        if (cs.confirmed > 35000)
-          value = cs.confirmed
-      console.log(value);
-    }
-
-      if (casetype == 'a'){
-        if (cs.active > 35000)
-          value = cs.active
-      console.log(value);
-    }
-
-      if (casetype == 'r'){
-        if (cs.recovered > 25000)
-          value = cs.recovered
-      console.log(value);
-    }
-
-      if (casetype == 'd'){
-        if (cs.death > 3000)
-          value = cs.death
-      console.log(value);
-    }
-    
-      datatable.push([
-        cs.country, value
-
-
-      ])
-
-    })
-
-
-
-    this.pieChart = {
-      chartType: 'PieChart',
-      dataTable: datatable,
-      //firstRowIsData: true,
-      options: { height: 500 },
-    };
-    this.columnChart = {
-      chartType: 'ColumnChart',
-      dataTable: datatable,
-      //firstRowIsData: true,
-      options: { height: 500 },
-    };
-  }
+ 
 
   ngOnInit(): void {
 
@@ -95,8 +40,8 @@ export class HomeComponent implements OnInit {
             result.forEach(cs => {
               if (!Number.isNaN(cs.confirmed)) {
 
-
-                this.totalConfirmed = this.totalConfirmed + cs.confirmed
+               
+                this.totalConfirmed += cs.confirmed
 
                 this.totalActive += cs.active
                 this.totalRecoverd += cs.recovered
@@ -106,6 +51,8 @@ export class HomeComponent implements OnInit {
 
             })
             this.initChart('c');
+            console.log(this.initChart);
+            
           }
 
         })
@@ -113,7 +60,62 @@ export class HomeComponent implements OnInit {
 
   }
   updateChart(input: HTMLInputElement) {
+    console.log(input.value);
+    
     this.initChart(input.value)
 }
+
+initChart(caseType: string) {
+  let datatable = [];
+
+  datatable.push(["Country", "Cases"])
+
+
+  this.globalCovidData.forEach(cs => {
+    let value :number ;
+
+    if (caseType == 'c')
+      if (cs.confirmed > 100)
+        value = cs.confirmed
+        
+    if (caseType == 'a')
+      if (cs.active > 2000)
+        value = cs.active
+        
+    if (caseType == 'd')
+      if (cs.death > 3000)
+        value = cs.death
+        
+    if (caseType == 'r')
+      if (cs.recovered > 3000)
+          value = cs.recovered
+      
+
+      datatable.push([
+          cs.country, value
+          ])
+        console.log(value);
+  })
+  
+
+
+  this.pieChart = {
+    chartType: 'PieChart',
+    dataTable: datatable,
+    //firstRowIsData: true,
+    options: { height: 300,is3D:true },
+  };
+  this.columnChart = {
+    chartType: 'ColumnChart',
+    dataTable: datatable,
+    //firstRowIsData: true,
+    options: { height: 300,is3D:true },
+  };
+}
+
+
+ 
+
+ 
 
 }

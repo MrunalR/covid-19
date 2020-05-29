@@ -10,6 +10,7 @@ import { HomeComponent } from './components/home/home.component';
 import { CountriesComponent } from './components/countries/countries.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NumberCardComponent } from './components/number-card/number-card.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { NumberCardComponent } from './components/number-card/number-card.compon
     HomeComponent,
     CountriesComponent,
     NumberCardComponent,
+    FooterComponent,
     
   ],
   imports: [

@@ -9,6 +9,7 @@
         <div class="form-group col-lg-5 mx-auto">
             <label for="c">Select Country</label>
             <select name="" id="c" class="form-control" #input (change)='updateVaule(input.value)'>
+                <option value="">Select Country</option>
                 <option *ngFor='let con of countries' value="{{con}}">{{con}}</option>
             </select>
         </div>
@@ -17,4 +18,20 @@
     <app-number-card [totalConfirmed]='totalConfirmed' [totalActive]='totalActive' [totalRecoverd]='totalRecoverd' [totalDeath]='totalDeath'>
 
     </app-number-card>
+
+    <hr>
+    <div class="row">
+        <div class="col-md-6">
+            <img class="symptoms" style="padding: 10px;" src="../../../assets/img/symptoms.png" alt="symptoms">
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <h3 style="color: #fa7c01;" class="about_corona">HOW IT SPREADS</h3>
+                <img class="spread" src="../../../assets/img/block-one.png" alt="block-one">
+                <h3 style="color: #5e8e12;" class="about_corona">PREVENTION</h3>
+                <img class="prevention" src="../../../assets/img/block-two.png" alt="block-two">
+            </div>
+
+        </div>
+    </div>
 </div>

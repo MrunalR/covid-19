@@ -3,10 +3,20 @@
         <div class="col-md-12">
             <h1 class="text-center page-title">COVID-19 TRACKER</h1>
         </div>
+    </div>
+    <hr>
+    <div class="row">
         <div class="col-md-4">
-            <h5> Daily updates:as on, 08:00 IST (GMT+5:30)</h5>
+            <h5> Updated daily at 08:00 IST (GMT+5:30)</h5>
+        </div>
+        <div class="col-md-4">
+            <h4 style="color: red; font-weight: bolder;">#IndiaFightsCorona COVID-19</h4>
+        </div>
+        <div class="col-md-4">
+            <span><a href="https://www.mygov.in/aarogya-setu-app/" target="_blank" ><img src="../../../assets/img/aarogya_btn_img.png" alt="aarogya setu app link"></a></span>
         </div>
     </div>
+    <hr>
     <div class="row">
         <div class="col-md-12">
             <app-number-card [totalConfirmed]='totalConfirmed' [totalActive]='totalActive' [totalRecoverd]='totalRecoverd' [totalDeath]='totalDeath'>
@@ -16,42 +26,10 @@
     </div>
     <hr>
     <div class="row">
-        <div class="col-md-12">
-            <div class="ui form">
-                <div class="inline fields">
-                    <label>Select case type :</label>
-                    <div class="field">
-                        <div class="ui radio checkbox">
-                            <input id="c" value="c" type="radio" #c (click)='updateChart(c)' tabindex="0" class="hidden" name="casetype" checked="checked">
-                            <label for="c">Confirmed</label>
-                        </div>
-                    </div>
-                    <div class="field">
-                        <div class="ui radio checkbox">
-                            <input id="a" value="a" type="radio" #a (click)='updateChart(a)' class="hidden" tabindex="0" name="casetype">
-                            <label for="a">Active</label>
-                        </div>
-                    </div>
-                    <div class="field">
-                        <div class="ui radio checkbox">
-                            <input id="r " value="r" type="radio" #r (click)='updateChart(r)' class="hidden" tabindex="0" name="casetype">
-                            <label for="r">Recovered</label>
-                        </div>
-                    </div>
-                    <div class="field">
-                        <div class="ui radio checkbox">
-                            <input id="d" value="d" type="radio" #d (click)='updateChart(d)' class="hidden" tabindex="0" name="casetype">
-                            <label for="d">Deaths</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <div class="col-md-6">
+        <div class="col-md-5">
             <google-chart [data]="pieChart"></google-chart>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-7">
             <google-chart [data]="columnChart"></google-chart>
         </div>
     </div>

@@ -1,0 +1,78 @@
+[debug] [2020-05-25T20:50:02.751Z] ----------------------------------------------------------------------
+[debug] [2020-05-25T20:50:02.753Z] Command:       /usr/bin/node /usr/local/bin/firebase deploy
+[debug] [2020-05-25T20:50:02.753Z] CLI Version:   7.16.1
+[debug] [2020-05-25T20:50:02.753Z] Platform:      linux
+[debug] [2020-05-25T20:50:02.753Z] Node Version:  v12.14.1
+[debug] [2020-05-25T20:50:02.753Z] Time:          Tue May 26 2020 02:20:02 GMT+0530 (India Standard Time)
+[debug] [2020-05-25T20:50:02.754Z] ----------------------------------------------------------------------
+[debug] [2020-05-25T20:50:02.754Z] 
+[debug] [2020-05-25T20:50:02.824Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-05-25T20:50:02.824Z] > authorizing via signed-in user
+[debug] [2020-05-25T20:50:02.825Z] [iam] checking project covid19-54c6b for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-05-25T20:50:02.827Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-05-25T20:50:02.827Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-05-25T20:50:03.059Z] <<< HTTP RESPONSE 200
+[debug] [2020-05-25T20:50:03.135Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/covid19-54c6b:testIamPermissions  
+
+[debug] [2020-05-25T20:50:04.809Z] <<< HTTP RESPONSE 200
+[debug] [2020-05-25T20:50:04.813Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/covid19-54c6b  
+ 
+[debug] [2020-05-25T20:50:05.321Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'covid19-54c6b'...
+[info] 
+[info] i  deploying hosting
+[debug] [2020-05-25T20:50:05.332Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/covid19-54c6b/versions  
+
+[debug] [2020-05-25T20:50:07.425Z] <<< HTTP RESPONSE 200
+[info] i  hosting[covid19-54c6b]: beginning deploy...
+[info] i  hosting[covid19-54c6b]: found 10 files in dist/covid19-tracker
+[debug] [2020-05-25T20:50:07.495Z] [hosting] hash cache [ZGlzdC9jb3ZpZDE5LXRyYWNrZXI] stored for 10 files
+[debug] [2020-05-25T20:50:07.495Z] [hosting][hash queue][FINAL]
+[debug] [2020-05-25T20:50:07.495Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/covid19-54c6b/versions/c7fe8a726000c47a:populateFiles  
+ <request body omitted>
+[debug] [2020-05-25T20:50:09.253Z] <<< HTTP RESPONSE 200
+[debug] [2020-05-25T20:50:09.260Z] [hosting][populate queue][FINAL]
+[debug] [2020-05-25T20:50:09.260Z] [hosting] uploads queued: 5
+[debug] [2020-05-25T20:50:12.379Z] [hosting][upload queue][FINAL]
+[info] ✔  hosting[covid19-54c6b]: file upload complete
+[debug] [2020-05-25T20:50:12.382Z] [hosting] deploy completed after 4954ms
+[debug] [2020-05-25T20:50:12.593Z] [
+  {
+    "config": {
+      "public": "dist/covid19-tracker",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "covid19-54c6b"
+    },
+    "site": "covid19-54c6b",
+    "version": "sites/covid19-54c6b/versions/c7fe8a726000c47a"
+  }
+]
+[info] i  hosting[covid19-54c6b]: finalizing version...
+[debug] [2020-05-25T20:50:12.595Z] >>> HTTP REQUEST PATCH https://firebasehosting.googleapis.com/v1beta1/sites/covid19-54c6b/versions/c7fe8a726000c47a?updateMask=status  
+
+[debug] [2020-05-25T20:50:14.322Z] <<< HTTP RESPONSE 200
+[debug] [2020-05-25T20:50:14.323Z] [hosting] finalized version for covid19-54c6b:
+[info] ✔  hosting[covid19-54c6b]: version finalized
+[info] i  hosting[covid19-54c6b]: releasing new version...
+[debug] [2020-05-25T20:50:14.326Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/covid19-54c6b/releases?version_name=sites/covid19-54c6b/versions/c7fe8a726000c47a  
+
+[debug] [2020-05-25T20:50:15.986Z] <<< HTTP RESPONSE 200
+[debug] [2020-05-25T20:50:15.987Z] [hosting] release:
+[info] ✔  hosting[covid19-54c6b]: release complete
+[info] 
+[info] ✔  Deploy complete!
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/covid19-54c6b/overview
+[info] Hosting URL: https://covid19-54c6b.firebaseapp.com
