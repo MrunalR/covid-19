@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GoogleChartInterface } from 'ng2-google-charts';
+import { NgxSpinnerService } from "ngx-spinner";
 
 import { DataServieService } from 'src/app/services/data-servie.service';
 import { GlobalDataSummary } from 'src/app/models/global-covid-data';
@@ -24,7 +25,7 @@ globalCovidData: GlobalDataSummary[];
     chartType: 'ColumnChart'
   }
 
-  constructor(private dataService: DataServieService) { }
+  constructor(private dataService: DataServieService,private spinner: NgxSpinnerService) { }
 
  
 
@@ -56,6 +57,14 @@ globalCovidData: GlobalDataSummary[];
           }
 
         })
+         /** spinner starts on init */
+    this.spinner.show();
+ 
+    setTimeout(() => {
+      /** spinner ends after 2 seconds */
+      this.spinner.hide();
+    }, 2000);
+
 
 
   }

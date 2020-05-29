@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Ng2GoogleChartsModule } from 'ng2-google-charts';
+import { NgxSpinnerModule } from "ngx-spinner";
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -27,6 +28,7 @@ import { FooterComponent } from './components/footer/footer.component';
     AppRoutingModule,
     HttpClientModule,
     Ng2GoogleChartsModule,
+    NgxSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
